@@ -1,0 +1,10 @@
+artifacts_root: artifacts 
+
+
+data_ingeestion:
+ 
+ root_dir: artifacts/data_ingestion
+ source_URL:
+ local_data_file:
+ unzip_dir: 
+  
