@@ -1,7 +1,7 @@
 artifacts_root: artifacts 
 
 
-data_ingeestion:
+data_ingestion:
  
  root_dir: artifacts/data_ingestion
  source_URL: https://github.com/koushik2299/Data-Science/raw/main/winequality-data.zip
