@@ -1,6 +1,6 @@
 from mlops.constants import * 
 from mlops.utils.common import read_yaml,create_directories
-from mlops.entity.config_entity import DataIngestionConfig
+from mlops.entity.config_entity import DataIngestionConfig, DataValidationconfig
 
 class configurationManager:
     def __init__(
@@ -27,5 +27,21 @@ class configurationManager:
         )
 
         return data_ingestion_config
+    
+    def get_data_validation_config(self) -> DataValidationconfig:
+            config = self.config.data_validation
+            schema = self.schema.COLUMNS
+
+            create_directories([config.root_dir])
+
+            data_validation_config = DataValidationconfig(
+                 root_dir = config.root_dir,
+                 status_file = config.status_file,
+                 unzip_dir = config.unzip_dir,
+                 all_schema = schema
+            )
+            
+            return data_validation_config
+
 
 
